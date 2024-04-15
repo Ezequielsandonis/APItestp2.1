@@ -1,0 +1,76 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\NG By ROG\\Desktop\\Repositorios-Git\\APItestp2.1\\APItestp2.1\\APItestp2.1.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\NG By ROG\\Desktop\\Repositorios-Git\\APItestp2.1\\APItestp2.1\\APItestp2.1.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\NG By ROG\\Desktop\\Repositorios-Git\\APItestp2.1\\APItestp2.1\\APItestp2.1.csproj",
+        "projectName": "APItestp2.1",
+        "projectPath": "C:\\Users\\NG By ROG\\Desktop\\Repositorios-Git\\APItestp2.1\\APItestp2.1\\APItestp2.1.csproj",
+        "packagesPath": "C:\\Users\\NG By ROG\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\NG By ROG\\Desktop\\Repositorios-Git\\APItestp2.1\\APItestp2.1\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\NG By ROG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
