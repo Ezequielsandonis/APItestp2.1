@@ -18,12 +18,36 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\NG By ROG\Desktop\Repositorios-Git\APItestp2.1\APItestp2.1
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/NG By ROG/Desktop/Repositorios-Git/APItestp2.1/APItestp2.1/Views/Cuenta/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/NG By ROG/Desktop/Repositorios-Git/APItestp2.1/APItestp2.1/Views/Cuenta/Registrar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXFJlZ2lzdHJhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/NG By ROG/Desktop/Repositorios-Git/APItestp2.1/APItestp2.1/Views/Cuenta/Token.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXFRva2VuLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/NG By ROG/Desktop/Repositorios-Git/APItestp2.1/APItestp2.1/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/NG By ROG/Desktop/Repositorios-Git/APItestp2.1/APItestp2.1/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[C:/Users/NG By ROG/Desktop/Repositorios-Git/APItestp2.1/APItestp2.1/Views/Persona/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uYVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/NG By ROG/Desktop/Repositorios-Git/APItestp2.1/APItestp2.1/Views/Persona/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uYVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/NG By ROG/Desktop/Repositorios-Git/APItestp2.1/APItestp2.1/Views/Persona/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uYVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/NG By ROG/Desktop/Repositorios-Git/APItestp2.1/APItestp2.1/Views/Persona/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uYVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/NG By ROG/Desktop/Repositorios-Git/APItestp2.1/APItestp2.1/Views/Shared/Error.cshtml]

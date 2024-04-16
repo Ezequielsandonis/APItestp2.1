@@ -1,0 +1,58 @@
+﻿@using APItestp2._1.Models;
+@model Persona
+@{
+    ViewData["title"] = "Editar Persona";
+}
+
+@*Validar que no haya errores*@
+@if (ViewBag.Error != null)
+{
+    <div class="alert-danger" role="alert">
+        @ViewBag.Error
+    </div>
+}
+
+<h1>Editar Persona</h1>
+@*Validar que no haya errores*@
+@if (ViewBag.Error != null)
+{
+    <div class="alert-danger" role="alert">
+        @ViewBag.Error
+    </div>
+}
+
+@*EDITAR Persona-START*@
+<form method="post" asp-action="Edit">
+
+    <input type="hidden" asp-for="PersonaId" />
+
+    <div class="form-group">
+        <label>Nombre:</label>
+        <input asp-for="Nombre" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Dni:</label>
+        <input asp-for="Dni" class="form-control" />
+    </div>
+
+  
+    <div class="form-group">
+        <label>Correo:</label>
+        <input asp-for="Correo"  type="email" class="form-control"  />
+    </div>
+
+
+    <div class="form-group">
+        <label>Estado:</label>
+        <input asp-for="Estado" class="form-check-input" />
+    </div>
+
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-success">Guardar cambios</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>
+@*EDITAR USUARIO-END*@
+

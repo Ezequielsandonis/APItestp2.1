@@ -8,7 +8,7 @@ create table Persona(
 PersonaId int identity(1,1) not null primary key,
 Nombre varchar(50),
 Dni int,
-FechaNacimiento datetime ,
+FechaNacimiento date ,
 Correo varchar(100) unique,
 Contrasenia varchar(max),
 Token varchar(max),
@@ -31,7 +31,7 @@ end
 create procedure RegistrarPersona 
 @Nombre varchar(50),
 @Dni int,
-@FechaNacimiento datetime ,
+@FechaNacimiento date ,
 @Correo varchar(100),
 @Contrasenia varchar(max),
 @Token varchar(max),
@@ -80,13 +80,22 @@ update Persona set Token=@Token, FechaExpiracion=@Fecha where Correo=@Correo
 end
 
 
+---- Validar Persona
+create procedure ValidarPersona 
+@Correo varchar(100)
+as begin
+select * from Persona where Correo=@Correo
+end
+
+
+
 
 --Actualizar persona 
 create procedure ActualizarPersona
 @PersonaId int, 
 @Nombre varchar(50),
 @Dni int,
-@FechaNacimiento datetime,
+@FechaNacimiento date,
 @Correo varchar(100),
 @Estado bit
 as begin

@@ -1,0 +1,58 @@
+﻿@using APItestp2._1.Models;
+@model Persona
+@{
+    ViewData["title"] = "Crear Usuario";
+}
+
+<h1>Agregar nuevo usuario</h1>
+@*Validar que no haya errores*@
+@if (ViewBag.Error != null)
+{
+    <div class="alert-danger" role="alert">
+        @ViewBag.Error
+    </div>
+}
+
+@*AGREGAR USUARIO-START*@
+<form method="post">
+
+    <div class="form-group">
+        <label>Nombre:</label>
+        <input asp-for="Nombre" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>DNI:</label>
+        <input asp-for="Dni" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Fecha de nacimiento:</label>
+        <input asp-for="FechaNacimiento" type="date" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Correo:</label>
+        <input asp-for="Correo" type="email" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Contraseña:</label>
+        <input asp-for="Contrasenia" type="password" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Manetener activo?:</label>
+        <input asp-for="Estado" class="form-check-input" />
+    </div>
+
+   
+
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-success">Guardar</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>
+@*AGREGAR USUARIO-END*@
+

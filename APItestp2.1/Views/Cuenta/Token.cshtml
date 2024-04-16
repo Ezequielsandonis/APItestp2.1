@@ -1,0 +1,25 @@
+﻿@*ESTA VISTA SIRVE PARA MOSTRAR ERRORES RELACIONADOS A LA CUENTA*@
+
+@{
+    ViewData["title"] = "Validacion";
+}
+
+@*contenedor principal*@
+<div class="container mt-5">
+    <h1 class="text-center alert-info">@ViewData["mensaje"]</h1>
+    <div class="row">
+
+        @*botones para registrarse  e iniciar sesion*@
+        <di class="col-md-6 offset-md-3">
+            <div class="text-center">
+                <a asp-action="Registrar" asp-controller="Cuenta" class="btn btn-primary btn-lg btn-block">
+                <i class="fas fa-user-plus"></i>Registrarse</a>
+                <a asp-action="Login" asp-controller="Cuenta" class="btn btn-secondary btn-lg btn-block">
+                    <i class="fas fa-sign-in-alt"></i>Iniciar sesión
+                </a>
+            </div>
+        </di>
+
+    </div>
+</div>
+

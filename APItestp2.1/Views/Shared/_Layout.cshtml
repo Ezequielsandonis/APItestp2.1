@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@*referencias*@
+@using System.Security.Claims;
+@using Microsoft.AspNetCore.Mvc;
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -9,27 +13,72 @@
     <link rel="stylesheet" href="~/APItestp2._1.styles.css" asp-append-version="true" />
 </head>
 <body>
+   
+
+
+
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+
+        @* BARRA DE  NAVEGACION-START *@
+        <nav class="navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">APItestp2._1</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
+                <a class="navbar-brand" href="#">Gestión de Personas</a>
+               
+
+
+                    <div class="d-flex mx-auto">
+                       
+
+                    @* listado de opciones *@
+                    <ul class="navbar-nav ms-auto">
+                        @* Si el usuario no esta autenticado(activado) *@
+                        @if (!(User?.Identity?.IsAuthenticated ?? false))
+                        {
+                            @* mostrar opcion de registro e inicio de sesion *@
+                            <li class="nav-item">
+                                <a class="nav-link" asp-action="Registrar" asp-controller="Cuenta">Registrarse</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-action="Login" asp-controller="Cuenta">Iniciar Sesión</a>
+                            </li>
+                        }
+                        else
+                        {
+                            @* Opciones disponibles solo para usuarios autenticados *@
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" id="UserDropdown" data-bs-toggle="dropdown">
+                                    @* Cargar nombre del usuario *@
+                                    @User.FindFirstValue(ClaimTypes.NameIdentifier)
+                                </a>
+                                @* menu opciones *@
+                                <ul class="dropdown-menu dropdown-menu-end">
+
+                                   
+                                        <li>
+                                            <a class="dropdown-item" asp-action="Index" asp-controller="Persona">Administrar Personas</a>
+                                        </li>
+                                    
+
+                                    <li>
+                                        <a class="dropdown-item" asp-action="CerrarSesion" asp-controller="Cuenta">Cerrar Sesión</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
         </nav>
+        @* BARRA DE  NAVEGACION-END *@
+
+
+        @* BARRA DE  NAVEGACION *@
     </header>
+
+
+
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

@@ -14,7 +14,8 @@ namespace APItestp2._1.Models
         public int Dni {  get; set; }
 
         [Required(ErrorMessage = "La fecha de nacimiento es obligatoria.")]
-        public DateTime FechaNacimiento { get; set; }
+        [DataType(DataType.Date)]
+        public DateOnly FechaNacimiento { get; set; }
 
         [Required(ErrorMessage = "El correo es obligatorio")]
         [EmailAddress(ErrorMessage = "El correo debe ser valido")]

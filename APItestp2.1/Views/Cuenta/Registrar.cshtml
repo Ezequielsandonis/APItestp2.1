@@ -1,0 +1,77 @@
+﻿
+@model Persona
+@{
+    ViewData["title"] = "Registro";
+}
+@*contenedor principal*@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card mt-5">
+
+                @*Titulo*@
+                <div class="card-header bg-primary text-white">
+                    <h2 class="text-center">Registrarse</h2>
+                </div>
+
+
+                @*REGISTRO(FORM)-START*@
+                <div class="card-body">
+                    <form method="post" asp-action="Registrar" asp-controller="Cuenta">
+                        @*seguridad*@
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            <label asp-for="Nombre">Nombre:</label>
+                            <input asp-for="Nombre" class="form-control" placeholder="Ingrese su nombre:" />
+                            @*Data Annotations*@
+                            <span asp-validation-for="Nombre" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Dni">Dni:</label>
+                            <input asp-for="Dni" type="number" class="form-control" placeholder="Ingrese su DNI:" />
+                            @*Data Annotations*@
+                            <span asp-validation-for="Dni" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="FechaNacimiento">Fecha De nacimiento:</label>
+                            <input asp-for="FechaNacimiento" class="form-control" type="date" placeholder="Ingrese su fecha de nacimiento:" />
+                            @*Data Annotations*@
+                            <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Correo">Correo:</label>
+                            <input asp-for="Correo" class="form-control" type="email" placeholder="Ingrese su correo:" />
+                            @*Data Annotations*@
+                            <span asp-validation-for="Correo" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Contrasenia">Contraseña:</label>
+                            <input asp-for="Contrasenia" type="password" class="form-control" placeholder="Ingrese su contraseña:" />
+                            @*Data Annotations*@
+                            <span asp-validation-for="Contrasenia" class="text-danger"></span>
+
+                        </div>
+
+                        @*boton*@
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-secondary btn-block">Registrarse</button>
+                        </div>
+
+
+                    </form>
+                </div>
+                @*REGISTRO(FORM)-END*@
+
+            </div>
+            @*cargar el viewbag*@
+            @if (ViewBag.Error!=null)
+            {
+                <div class="alert alert-danger mt-3" role="alert">@ViewBag.Error</div>
+            }
+        </div>
+    </div>
+</div>

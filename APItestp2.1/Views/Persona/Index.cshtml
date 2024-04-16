@@ -1,0 +1,63 @@
+﻿@using System.Linq;
+@model IEnumerable<Persona>
+
+
+@{
+    ViewData["title"] = "Lista de Personas";
+}
+
+@*Validar que no haya errores*@
+@if (ViewBag.Error != null)
+{
+    <div class="alert-danger" role="alert">
+        @ViewBag.Error
+    </div>
+}
+
+
+<h1>@ViewData["Title"]</h1>
+<p>
+    <a asp-action="Create" class="btn btn-primary">Crear nueva Persona</a>
+</p>
+
+
+@*validar y evitar errores*@
+@if (Model != null)
+{
+    @*mostrar usuarios en una tabla*@
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre </th>
+                <th>Dni</th>
+                <th>Fecha de nacimiento</th>
+                <th>Correo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var persona in Model)
+            {
+                <tr>
+                    <td>@persona.Nombre</td>
+                    <td>@persona.Dni</td>
+                    <td>@persona.FechaNacimiento.ToString("dd-MM-yyyy")</td>
+                    <td>@persona.Correo</td>
+
+                 
+                    
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@persona.PersonaId">Editar</a>
+                        <a asp-action="Delete" asp-route-id="@persona.PersonaId">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+  
+}
+else
+{
+    <p>No se encontró ninguna persona</p>
+}

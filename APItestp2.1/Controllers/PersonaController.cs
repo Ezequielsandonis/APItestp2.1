@@ -25,7 +25,7 @@ namespace APItestp2._1.Controllers
 
         //METODO INDEX- DEVUELVE TODAS LAS PERSONAS
 
-        public IActionResult Index(string buscar, int? pagina)
+        public IActionResult Index()
         {
             //control de errores
 
@@ -34,7 +34,7 @@ namespace APItestp2._1.Controllers
                
                 var personas = _personaServicios.ListarPersonas();
                
-                //lista actualizada y pqaginada
+                //lista actualizada 
                 return View(personas);
             }
             catch (Exception ex)
@@ -136,9 +136,10 @@ namespace APItestp2._1.Controllers
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         //parametros 
+                        cmd.Parameters.AddWithValue("@PersonaId", persona.PersonaId);
                         cmd.Parameters.AddWithValue("@Nombre", persona.Nombre);
                         cmd.Parameters.AddWithValue("@Dni", persona.Dni);
-                        cmd.Parameters.AddWithValue("@FechaNacimiento", persona.FechaNacimiento);
+                       
                         cmd.Parameters.AddWithValue("@Correo", persona.Correo);
                         cmd.Parameters.AddWithValue("@Estado", persona.Estado);
                         con.Open();
